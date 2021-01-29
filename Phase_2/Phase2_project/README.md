@@ -9,7 +9,7 @@ Based on that discovery,I initially created features to try and make predictions
 
 
 ## Data & Methods
-This model has been developed by using the training set, `kc_house_data_train.csv`. It was then predicted on the `kc_house_data_holdout_features.csv`. The resulting dataframe with price predictions has been saved as `housing_predictions.csv`.
+This model has been developed by using the training set, `kc_house_data_train.csv`. It was then predicted on the `kc_house_data_holdout_features.csv`. The resulting dataframe with price predictions has been saved as `housing_predictions_Kelvin_Arellano.csv`.
 
 The overall data set contains information about **houses that were sold in King County Seattle, Washington during the last decade**. Below is a description of the column names, to help gain a better understanding about what the raw data represents. 
 
@@ -38,3 +38,27 @@ The overall data set contains information about **houses that were sold in King 
 | **sqft_lot15** | square footage of the land lots of the nearest 15 neighbors |
 
 
+## Results
+
+During the exploratory data analysis phase, I discovered that the 'sqft_living' and 'price' have a highly positive correlation. Therefore, the higher the interior sqft, the higher the selling price.
+![Sqft_vs_price](./Visualizations/Sqft_living_vs_Price.png)
+
+
+Additionally, it was discovered that the condition a property was in also had a high impact on the price of a property. 
+
+![condition_vs_price](./Visualizations/condition_vs_price.png)
+
+Another high impact factor was whether the property has a basement and if the property had been renovated or not.
+![Basement_and_Renovation_vs_Price](./Visualizations/Renovation_and_basement_vs_price.png)
+
+However ultimately due to an unknown error in processing and dealing with the data I experiance some errors that caused these features to no longer be useful, so I was made to continue using only the combinations of polynomials I developed. Ultimately the results aren't terribly different, and given more time I would have fixed the issue. 
+
+## Final Model Performance
+
+After the unfortunate error of my kerrnal forcibly restarting and making me go with a simpilar model, the final Linear Regression model was able to generate an RMSE of 155714.79997127902 when predicting on testing data that was split from `kc_house_data_train.csv'. The final model's predictions on the blind holdout set can be found in housing_predictions_Kelvin_Arellano.csv.
+
+## Next Steps
+
+- Understanding kerrnal error
+- Feature selection using Recursive Feature Elimination with Cross Validation (RFECV) and other techniques
+- Generalize improved final model on holdout set
