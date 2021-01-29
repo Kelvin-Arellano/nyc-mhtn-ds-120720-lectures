@@ -6,13 +6,7 @@ For this project we were asked to build a linear regression mondel and predict h
 
 
 
-
-
-
-
-
-
-![sqft](.Visualizations/Sqft_living vs Price.42.00 PM.png)
+![sqft](./Visualizations/Sqft_living vs Price.42.00 PM.png)
 
 
 
